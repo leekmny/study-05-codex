@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PDF 문서의 핵심을 두 가지 길이로 요약하는 실습 도구입니다.">
+  <title>PDF 요약 AI | 14장 AI 실습</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="pdf" data-page="pdf">
+  <header class="site-header">
+    <div class="shell header-row">
+      <span class="site-name">14장 AI 실습</span>
+      <nav aria-label="실습 앱">
+        <a href="/index.html">공감 다이어리</a>
+        <a href="/index_pdf.html" aria-current="page">PDF 요약</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="page-intro">
+      <h1>PDF 요약 AI</h1>
+      <p id="privacy-note">문서에서 추출한 텍스트는 외부 AI 모델로 전송됩니다. 공개 실습용 문서만 올려 주세요.</p>
+    </div>
+
+    <noscript><p class="notice">PDF 요약을 사용하려면 JavaScript를 켜 주세요.</p></noscript>
+
+    <div class="workspace pdf-workspace">
+      <form class="panel entry-panel" id="pdf-form" method="post">
+        <label class="section-title" for="pdf-file">PDF 파일</label>
+        <p class="field-note" id="pdf-help">텍스트를 선택할 수 있는 PDF, 최대 10 MiB</p>
+        <input type="file" id="pdf-file" name="pdf" accept="application/pdf,.pdf" required
+          aria-describedby="pdf-help privacy-note">
+
+        <fieldset id="summary-modes">
+          <legend>요약 방식</legend>
+          <label class="mode-option">
+            <input type="radio" name="mode" value="standard" checked>
+            <span>일반 요약 <small>핵심 항목으로 정리</small></span>
+          </label>
+          <label class="mode-option">
+            <input type="radio" name="mode" value="brief">
+            <span>간단 요약 <small>짧은 문장으로 정리</small></span>
+          </label>
+        </fieldset>
+
+        <button type="submit" disabled>요약 생성하기</button>
+        <p class="status" id="request-status" role="status"></p>
+        <p class="notice notice-error" id="request-error" role="alert"></p>
+      </form>
+
+      <section class="panel result-panel" aria-labelledby="result-heading" id="result-panel">
+        <h2 id="result-heading">문서 요약</h2>
+        <p class="empty" id="result-empty">PDF 파일과 요약 방식을 선택해 주세요.</p>
+        <div class="skeleton" id="result-loading" aria-hidden="true" hidden><span></span><span></span><span></span></div>
+        <div id="result-content" hidden>
+          <dl class="document-meta">
+            <div><dt>파일명</dt><dd id="result-file"></dd></div>
+            <div><dt>페이지</dt><dd id="result-pages"></dd></div>
+          </dl>
+          <div class="result-copy" id="result-summary"></div>
+          <p class="result-meta">응답 모델 <span id="result-model"></span></p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

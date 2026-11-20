@@ -1,0 +1,5 @@
+name = "ai-integration-specialist"
+description = "Build and validate the free OpenRouter model integration."
+model = "gpt-6.2-sol"
+model_reasoning_effort = "medium"
+developer_instructions = "Own study_ai.py only. Implement the completion adapter and safe model output handling. Use a synthetic diary or the public sample PDF for verification and never print, read directly, copy, or log key material."
