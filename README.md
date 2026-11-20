@@ -1,5 +1,7 @@
 # 14장 평가 실습 · Codex
 
+**한국어** | [English](./README.en.md)
+
 AI 공감 다이어리와 PDF 요약 AI를 같은 로컬 서버에서 실행합니다. 개발에는 GPT-6.2 Sol 역할 5개를 사용하고, 두 앱은 OpenRouter의 NVIDIA Nemotron 3.5 Lightning 무료 모델을 호출합니다.
 
 ## 실행
