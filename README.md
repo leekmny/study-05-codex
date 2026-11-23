@@ -25,6 +25,14 @@ python -B study_app.py --port 8766
 
 샘플은 [교재의 공식 GitHub 자료실](https://github.com/taehojo/vibecoding/blob/master/%EC%9E%85%EB%A0%A5%EC%98%88%EC%A0%9C/%ED%95%9C%EA%B8%80%EB%A7%9E%EC%B6%A4%EB%B2%95.pdf)에서 받았습니다. SHA-256은 `2237b331707cc8c87d202943284fcaf47624d0993a7ae5b80b9134820cc0c1d7`입니다.
 
+### 현재 앱 화면
+
+가상의 일기와 교재 PDF를 브라우저에서 사용해 촬영했습니다. 모델 응답은 화면 설명용 예시입니다.
+
+![AI 공감 다이어리의 감정 분석 결과와 지난 기록](docs/images/diary.png)
+
+![공식 샘플 PDF의 파일 정보와 일반 요약 결과](docs/images/pdf-summary.png)
+
 ## Codex 역할과 평가 캡처
 
 역할별 모델과 지시는 `.codex/agents/*.toml`에서 확인할 수 있습니다. 역할 설정을 읽어 Codex CLI를 독립 스레드로 실행했고, 역할별 실행 기록은 릴리스에 첨부한 캡처에서 확인할 수 있습니다. 작업 세션에는 Codex의 `workspace-write` 권한을 적용했습니다.
@@ -47,4 +55,4 @@ GitHub 릴리스의 `study-05-evaluation-screenshots.zip`에 평가 순서대로
 python -B -m unittest discover -s tests -v
 ```
 
-계약 테스트는 실제 로컬 HTTP 서버와 공식 PDF를 사용하며 외부 모델만 대체합니다. 결과 화면 캡처에서는 브라우저에서 외부 모델까지 연결되는 흐름을 확인합니다.
+계약 테스트는 실제 로컬 HTTP 서버와 공식 PDF를 사용하며 외부 모델만 대체합니다. 릴리스에 보관한 평가 캡처에는 브라우저에서 외부 모델까지 연결한 결과가 담겨 있습니다.

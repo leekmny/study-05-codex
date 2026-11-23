@@ -25,6 +25,14 @@ In the exercise environment, the server can read the key from the existing `Stud
 
 The sample came from the [textbook's official GitHub repository](https://github.com/taehojo/vibecoding/blob/master/%EC%9E%85%EB%A0%A5%EC%98%88%EC%A0%9C/%ED%95%9C%EA%B8%80%EB%A7%9E%EC%B6%A4%EB%B2%95.pdf). Its SHA-256 hash is `2237b331707cc8c87d202943284fcaf47624d0993a7ae5b80b9134820cc0c1d7`.
 
+### Current app screens
+
+These captures show a fictional diary entry and the textbook PDF in the browser, with sample model responses.
+
+![AI Empathy Diary with the emotion analysis and recent entries](docs/images/diary.png)
+
+![File details and standard summary of the official sample PDF](docs/images/pdf-summary.png)
+
 ## Codex roles and assessment screenshots
 
 See `.codex/agents/*.toml` for each role's model and instructions. Codex CLI ran in separate threads using those role configurations, and the screenshots attached to the release show the run history for each role. The work sessions used Codex's `workspace-write` permission.
@@ -47,4 +55,4 @@ Save `한글맞춤법.pdf` from the textbook repository as `samples/한글맞춤
 python -B -m unittest discover -s tests -v
 ```
 
-The contract tests use the real local HTTP server and the official sample PDF, substituting only the external model. The result screenshots show the full flow from the browser to the external model.
+The contract tests use the real local HTTP server and the official sample PDF, substituting only the external model. The archived assessment captures in the release show the full flow from the browser to the external model.
